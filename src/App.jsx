@@ -21,7 +21,6 @@ export default function App() {
     { id: 'sensory', label: '感官風味庫', icon: Award },
     { id: 'science', label: '沖煮科學', icon: Filter },
     { id: 'origins', label: '產區與品種', icon: Layers },
-    { id: 'downloads', label: '講義下載', icon: Download },
   ];
   const [bookingModal, setBookingModal] = useState(false);
   const [bookedSuccess, setBookedSuccess] = useState(false);
@@ -527,7 +526,7 @@ export default function App() {
           <div className="section-header">
             <span className="section-tag">SENSORY & FLAVORS</span>
             <h2 className="section-title">精品咖啡感官與風味庫</h2>
-            <p className="section-desc">收錄世界標準杯測風味輪、反文化咖啡瑕疵輪與 Le Nez du Cafe 36 味聞香瓶解析。</p>
+            <p className="section-desc">收錄世界標準 SCAA 英文官方風味輪、反文化咖啡 (Counter Culture) 英文風味輪與 36 味聞香瓶解析。</p>
           </div>
 
           <div className="dripper-tabs">
@@ -536,14 +535,14 @@ export default function App() {
               className={`dripper-tab ${sensoryTab === 'scaa' ? 'active' : ''}`}
               onClick={() => setSensoryTab('scaa')}
             >
-              SCAA 2016 官方風味輪
+              SCAA 官方風味輪 (English)
             </button>
             <button 
               id="sensory-tab-cc"
               className={`dripper-tab ${sensoryTab === 'cc' ? 'active' : ''}`}
               onClick={() => setSensoryTab('cc')}
             >
-              反文化咖啡 (Counter Culture)
+              反文化咖啡 (Counter Culture English)
             </button>
             <button 
               id="sensory-tab-36"
@@ -554,90 +553,99 @@ export default function App() {
             </button>
           </div>
 
+          {/* SCAA 官方英文版風味輪 - 直接大圖展示 */}
           {sensoryTab === 'scaa' && (
-            <div className="gallery-grid">
-              {[
-                {
-                  title: 'SCAA 2016 官方風味輪 (繁體中文版)',
-                  badge: '官方繁中版',
-                  desc: 'SCAA 與 WCR 2016 最新修訂世界標準繁中風味輪，涵蓋花香、果香、甜感等 9 大維度。',
-                  file: '/coffee_assets/03_感官與風味庫/SCAA官方風味輪/scaa_flavor_wheel_2016_繁體中文.png'
-                },
-                {
-                  title: 'SCAA 2016 繁中超高清印刷版',
-                  badge: '2546 x 3600 超高解析度',
-                  desc: '專業杯測室大圖輸出版，細緻字型與色環光譜無失真呈現。',
-                  file: '/coffee_assets/03_感官與風味庫/SCAA官方風味輪/scaa_flavor_wheel_2016_繁中高解析輸出版.jpg'
-                },
-                {
-                  title: 'SCAA 經典風味輪 (中英雙語對照)',
-                  badge: '中英文對照',
-                  desc: '專業杯測師必備中英文術語詞彙對照辭典。',
-                  file: '/coffee_assets/03_感官與風味庫/SCAA官方風味輪/scaa_flavor_wheel_經典中英對照.jpg'
-                },
-                {
-                  title: 'SCAA 2016 英文原版風味輪',
-                  badge: 'English Official',
-                  desc: 'WCR 感官辭典科學背景對照之英文官方版。',
-                  file: '/coffee_assets/03_感官與風味庫/SCAA官方風味輪/scaa_flavor_wheel_2016_英文原版.jpg'
-                }
-              ].map((item, idx) => (
-                <div key={idx} className="gallery-card" onClick={() => setLightboxAsset(item)}>
-                  <div className="gallery-card-thumb">
-                    <span className="badge">{item.badge}</span>
-                    <img src={item.file} alt={item.title} />
-                  </div>
-                  <div className="gallery-card-info">
-                    <h4>{item.title}</h4>
-                    <p>{item.desc}</p>
-                    <span style={{ color: 'var(--accent-gold)', fontSize: '0.85rem', marginTop: '10px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      <Eye size={14} /> 點擊放大檢視
-                    </span>
-                  </div>
+            <div className="glass-panel" style={{ padding: '28px', maxWidth: '960px', margin: '0 auto' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px', flexWrap: 'wrap', gap: '14px' }}>
+                <div>
+                  <span style={{ background: 'var(--accent-amber)', color: '#fff', padding: '4px 12px', borderRadius: '12px', fontSize: '0.8rem', fontWeight: '700' }}>
+                    SCAA & WCR Official (English)
+                  </span>
+                  <h3 style={{ fontSize: '1.6rem', marginTop: '8px' }}>SCAA Coffee Taster's Flavor Wheel</h3>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem' }}>
+                    SCAA 與世界咖啡研究組織 (WCR) 聯合制定之世界標準杯測風味輪（官方英文高清原版）。
+                  </p>
                 </div>
-              ))}
+                <button 
+                  id="btn-scaa-fullscreen"
+                  className="nav-cta-btn" 
+                  style={{ padding: '9px 20px', fontSize: '0.88rem', display: 'flex', alignItems: 'center', gap: '6px' }}
+                  onClick={() => setLightboxAsset({
+                    title: "SCAA Coffee Taster's Flavor Wheel (Official English)",
+                    badge: "Official High-Res",
+                    desc: "Official SCAA and World Coffee Research flavor vocabulary sensory wheel.",
+                    file: "/coffee_assets/03_感官與風味庫/SCAA官方風味輪/scaa_flavor_wheel_2016_英文原版.jpg"
+                  })}
+                >
+                  <Eye size={16} /> 全螢幕放大檢視
+                </button>
+              </div>
+
+              <div 
+                style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-subtle)', background: '#100d0a', cursor: 'zoom-in', textAlign: 'center', padding: '16px' }}
+                onClick={() => setLightboxAsset({
+                  title: "SCAA Coffee Taster's Flavor Wheel (Official English)",
+                  badge: "Official High-Res",
+                  desc: "Official SCAA and World Coffee Research flavor vocabulary sensory wheel.",
+                  file: "/coffee_assets/03_感官與風味庫/SCAA官方風味輪/scaa_flavor_wheel_2016_英文原版.jpg"
+                })}
+              >
+                <img 
+                  src="/coffee_assets/03_感官與風味庫/SCAA官方風味輪/scaa_flavor_wheel_2016_英文原版.jpg" 
+                  alt="SCAA Coffee Taster's Flavor Wheel" 
+                  style={{ width: '100%', maxHeight: '760px', objectFit: 'contain' }}
+                />
+              </div>
             </div>
           )}
 
+          {/* 反文化咖啡英文版風味輪 - 直接大圖展示 */}
           {sensoryTab === 'cc' && (
-            <div className="gallery-grid">
-              {[
-                {
-                  title: '反文化咖啡風味輪 (中英對照)',
-                  badge: 'Counter Culture',
-                  desc: 'Counter Culture Coffee 獨創現代感官風味光譜。',
-                  file: '/coffee_assets/03_感官與風味庫/反文化咖啡風味輪/cc_flavor_wheel_反文化咖啡中英對照.jpg'
-                },
-                {
-                  title: '反文化咖啡 瑕疵風味輪 (Faults Wheel)',
-                  badge: '瑕疵味鑑識必備',
-                  desc: '烘焙瑕疵、生豆變質、過度發酵等負面風味鑑識標準。',
-                  file: '/coffee_assets/03_感官與風味庫/反文化咖啡風味輪/cc_faults_wheel_反文化瑕疵風味輪.jpg'
-                },
-                {
-                  title: '反文化咖啡 新版高解析風味輪',
-                  badge: '新版色彩光譜',
-                  desc: '現代扁平化高對比色彩風味光譜。',
-                  file: '/coffee_assets/03_感官與風味庫/反文化咖啡風味輪/cc_flavor_wheel_反文化咖啡新版.png'
-                }
-              ].map((item, idx) => (
-                <div key={idx} className="gallery-card" onClick={() => setLightboxAsset(item)}>
-                  <div className="gallery-card-thumb">
-                    <span className="badge">{item.badge}</span>
-                    <img src={item.file} alt={item.title} />
-                  </div>
-                  <div className="gallery-card-info">
-                    <h4>{item.title}</h4>
-                    <p>{item.desc}</p>
-                    <span style={{ color: 'var(--accent-gold)', fontSize: '0.85rem', marginTop: '10px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      <Eye size={14} /> 點擊放大檢視
-                    </span>
-                  </div>
+            <div className="glass-panel" style={{ padding: '28px', maxWidth: '960px', margin: '0 auto' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px', flexWrap: 'wrap', gap: '14px' }}>
+                <div>
+                  <span style={{ background: 'var(--accent-amber)', color: '#fff', padding: '4px 12px', borderRadius: '12px', fontSize: '0.8rem', fontWeight: '700' }}>
+                    Counter Culture Coffee (English)
+                  </span>
+                  <h3 style={{ fontSize: '1.6rem', marginTop: '8px' }}>Counter Culture Coffee Flavor Wheel</h3>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem' }}>
+                    Counter Culture Coffee 獨創現代感官風味光譜（官方英文高解析原版）。
+                  </p>
                 </div>
-              ))}
+                <button 
+                  id="btn-cc-fullscreen"
+                  className="nav-cta-btn" 
+                  style={{ padding: '9px 20px', fontSize: '0.88rem', display: 'flex', alignItems: 'center', gap: '6px' }}
+                  onClick={() => setLightboxAsset({
+                    title: "Counter Culture Coffee Flavor Wheel (English)",
+                    badge: "Official High-Res",
+                    desc: "Counter Culture Coffee standard flavor spectrum in high definition.",
+                    file: "/coffee_assets/03_感官與風味庫/反文化咖啡風味輪/cc_flavor_wheel_english_original.png"
+                  })}
+                >
+                  <Eye size={16} /> 全螢幕放大檢視
+                </button>
+              </div>
+
+              <div 
+                style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-subtle)', background: '#100d0a', cursor: 'zoom-in', textAlign: 'center', padding: '16px' }}
+                onClick={() => setLightboxAsset({
+                  title: "Counter Culture Coffee Flavor Wheel (English)",
+                  badge: "Official High-Res",
+                  desc: "Counter Culture Coffee standard flavor spectrum in high definition.",
+                  file: "/coffee_assets/03_感官與風味庫/反文化咖啡風味輪/cc_flavor_wheel_english_original.png"
+                })}
+              >
+                <img 
+                  src="/coffee_assets/03_感官與風味庫/反文化咖啡風味輪/cc_flavor_wheel_english_original.png" 
+                  alt="Counter Culture Coffee Flavor Wheel" 
+                  style={{ width: '100%', maxHeight: '760px', objectFit: 'contain' }}
+                />
+              </div>
             </div>
           )}
 
+          {/* SCAA 36味聞香瓶與味覺對應 */}
           {sensoryTab === '36' && (
             <div className="gallery-grid">
               {[
@@ -913,68 +921,6 @@ export default function App() {
                   <h4>{item.title}</h4>
                   <p>{item.desc}</p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </main>
-      )}
-
-      {/* 模組七：講義下載專區 */}
-      {currentTab === 'downloads' && (
-        <main className="container animate-fade-in" style={{ padding: '30px 0 60px' }}>
-          <div className="section-header">
-            <span className="section-tag">DOWNLOADS & RESOURCES</span>
-            <h2 className="section-title">官方白皮書與課程講義下載</h2>
-            <p className="section-desc">包含 SCAA / WCR 19 頁官方科學背景白皮書、反文化 PDF 與精編課綱。</p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px', maxWidth: '960px', margin: '0 auto' }}>
-            {[
-              {
-                name: 'SCAA 2016 風味輪科學背景白皮書 (19頁完整版)',
-                format: 'PDF (34.2 MB)',
-                path: '/coffee_assets/06_專業文獻與PDF/scaa_flavor_wheel_scientific_background_2016.pdf'
-              },
-              {
-                name: 'SCAA 經典風味輪 官方向量高解析 PDF',
-                format: 'PDF (677 KB)',
-                path: '/coffee_assets/06_專業文獻與PDF/scaa_flavor_wheel_official_vector.pdf'
-              },
-              {
-                name: '反文化咖啡風味輪 (Counter Culture 8.5x11 PDF)',
-                format: 'PDF (1.8 MB)',
-                path: '/coffee_assets/06_專業文獻與PDF/counter_culture_flavor_wheel_85x11.pdf'
-              },
-              {
-                name: '反文化咖啡 瑕疵味輪 (Faults Wheel 11x17 PDF)',
-                format: 'PDF (3.4 MB)',
-                path: '/coffee_assets/06_專業文獻與PDF/counter_culture_faults_wheel_11x17.pdf'
-              },
-              {
-                name: '手沖咖啡體驗班 講義大綱 (大倫精編版)',
-                format: 'Markdown (.md)',
-                path: '/coffee_assets/02_課程與教案/01_手沖咖啡體驗班_簡介與收費.md'
-              },
-              {
-                name: '基礎手沖專業實戰課綱 (兩大鐵則與三段注水)',
-                format: 'Markdown (.md)',
-                path: '/coffee_assets/02_課程與教案/02_基礎手沖專業實戰課綱.md'
-              }
-            ].map((res, i) => (
-              <div key={i} className="glass-panel" style={{ padding: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                  <h4 style={{ fontSize: '1rem', marginBottom: '6px' }}>{res.name}</h4>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--accent-gold)' }}>{res.format}</span>
-                </div>
-                <a 
-                  href={res.path} 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  download
-                  style={{ background: 'rgba(229,169,93,0.15)', color: 'var(--accent-gold)', padding: '10px 16px', borderRadius: '8px', fontSize: '0.85rem', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}
-                >
-                  <Download size={14} /> 下載
-                </a>
               </div>
             ))}
           </div>
