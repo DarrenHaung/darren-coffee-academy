@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 import { 
+  Menu,
   Coffee, Award, Compass, BookOpen, Layers, 
   Clock, Thermometer, Droplet, Download, 
   ExternalLink, ChevronRight, CheckCircle2, 
@@ -11,6 +12,17 @@ import './App.css';
 export default function App() {
   const [currentTab, setCurrentTab] = useState('home');
   const [lightboxAsset, setLightboxAsset] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navItems = [
+    { id: 'home', label: '首頁與理念', icon: Compass },
+    { id: 'courses', label: '手沖課程', icon: BookOpen },
+    { id: 'calculator', label: '沖煮計算機', icon: Coffee },
+    { id: 'sensory', label: '感官風味庫', icon: Award },
+    { id: 'science', label: '沖煮科學', icon: Filter },
+    { id: 'origins', label: '產區與品種', icon: Layers },
+    { id: 'downloads', label: '講義下載', icon: Download },
+  ];
   const [bookingModal, setBookingModal] = useState(false);
   const [bookedSuccess, setBookedSuccess] = useState(false);
   const [bookingData, setBookingData] = useState({ name: '', phone: '', people: '1', date: '' });
@@ -121,67 +133,111 @@ export default function App() {
             </div>
           </div>
 
-          <nav className="nav-links">
-            <button 
-              id="nav-home" 
-              className={`nav-item ${currentTab === 'home' ? 'active' : ''}`}
-              onClick={() => setCurrentTab('home')}
-            >
-              <Compass size={16} /> 首頁與理念
-            </button>
-            <button 
-              id="nav-courses" 
-              className={`nav-item ${currentTab === 'courses' ? 'active' : ''}`}
-              onClick={() => setCurrentTab('courses')}
-            >
-              <BookOpen size={16} /> 手沖課程
-            </button>
-            <button 
-              id="nav-calc" 
-              className={`nav-item ${currentTab === 'calculator' ? 'active' : ''}`}
-              onClick={() => setCurrentTab('calculator')}
-            >
-              <Coffee size={16} /> 沖煮計算機
-            </button>
-            <button 
-              id="nav-sensory" 
-              className={`nav-item ${currentTab === 'sensory' ? 'active' : ''}`}
-              onClick={() => setCurrentTab('sensory')}
-            >
-              <Award size={16} /> 感官風味庫
-            </button>
-            <button 
-              id="nav-science" 
-              className={`nav-item ${currentTab === 'science' ? 'active' : ''}`}
-              onClick={() => setCurrentTab('science')}
-            >
-              <Filter size={16} /> 沖煮科學
-            </button>
-            <button 
-              id="nav-origins" 
-              className={`nav-item ${currentTab === 'origins' ? 'active' : ''}`}
-              onClick={() => setCurrentTab('origins')}
-            >
-              <Layers size={16} /> 產區與品種
-            </button>
-            <button 
-              id="nav-downloads" 
-              className={`nav-item ${currentTab === 'downloads' ? 'active' : ''}`}
-              onClick={() => setCurrentTab('downloads')}
-            >
-              <Download size={16} /> 講義下載
-            </button>
+          {/* 桌面版導覽列 */}
+          <nav className="nav-links desktop-nav">
+            {navItems.map(item => {
+              const Icon = item.icon;
+              return (
+                <button 
+                  key={item.id}
+                  id={`nav-${item.id}`} 
+                  className={`nav-item ${currentTab === item.id ? 'active' : ''}`}
+                  onClick={() => setCurrentTab(item.id)}
+                >
+                  <Icon size={16} /> {item.label}
+                </button>
+              );
+            })}
           </nav>
 
           <button 
             id="btn-book-top" 
-            className="nav-cta-btn" 
+            className="nav-cta-btn desktop-cta" 
             onClick={() => setBookingModal(true)}
           >
             預約手沖課
           </button>
+
+          {/* 手機版漢堡切換按鈕 */}
+          <button
+            id="btn-hamburger"
+            className="hamburger-btn"
+            aria-label="開啟選單"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
         </div>
       </header>
+
+      {/* 手機版優雅深色毛玻璃抽屜選單 (Mobile Drawer) */}
+      {mobileMenuOpen && (
+        <div className="mobile-drawer-overlay" onClick={() => setMobileMenuOpen(false)}>
+          <div className="mobile-drawer glass-panel" onClick={e => e.stopPropagation()}>
+            <div className="mobile-drawer-header">
+              <div className="brand-badge" onClick={() => { setCurrentTab('home'); setMobileMenuOpen(false); }}>
+                <img 
+                  src="/coffee_assets/01_品牌與識別/brand_logo_大倫咖啡.jpg" 
+                  alt="大倫咖啡 Logo" 
+                  className="brand-logo-img" 
+                />
+                <div className="brand-text">
+                  <h1>大倫咖啡講堂</h1>
+                  <p>選單導覽</p>
+                </div>
+              </div>
+              <button 
+                id="btn-close-drawer"
+                className="mobile-drawer-close" 
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="關閉選單"
+              >
+                <X size={22} />
+              </button>
+            </div>
+
+            <nav className="mobile-nav-list">
+              {navItems.map(item => {
+                const Icon = item.icon;
+                const isActive = currentTab === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    id={`mobile-nav-${item.id}`}
+                    className={`mobile-nav-item ${isActive ? 'active' : ''}`}
+                    onClick={() => {
+                      setCurrentTab(item.id);
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    <div className="mobile-nav-item-left">
+                      <div className="mobile-nav-icon-box">
+                        <Icon size={18} />
+                      </div>
+                      <span className="mobile-nav-label">{item.label}</span>
+                    </div>
+                    <ChevronRight size={18} className="mobile-nav-arrow" />
+                  </button>
+                );
+              })}
+            </nav>
+
+            <div className="mobile-drawer-footer">
+              <button 
+                id="btn-mobile-book"
+                className="nav-cta-btn" 
+                style={{ width: '100%', padding: '14px', fontSize: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  setBookingModal(true);
+                }}
+              >
+                <Sparkles size={18} /> 立即預約手沖體驗課
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* 模組一：首頁與核心理念 */}
       {currentTab === 'home' && (
