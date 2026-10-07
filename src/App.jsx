@@ -73,7 +73,7 @@ export default function App() {
       structure: '60° 錐角、高深螺旋肋骨延伸至大圓單孔',
       flavor: '酸甜感強烈、花果香氣清晰突出、口感輕盈乾淨',
       method: 'の 字中心由內向外均勻注水，可採較快水流節奏',
-      img: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/brewing_equipment_手沖器具實拍.jpg'
+      img: '/coffee_assets/04_沖煮科學與器材/四大主流濾杯官方圖/dripper_hario_v60.jpg'
     },
     kono: {
       name: 'Kono 名門流錐形濾杯',
@@ -82,7 +82,7 @@ export default function App() {
       structure: '錐形設計，肋骨僅分佈於濾杯下半段，上半部與濾紙高度貼合真空密封',
       flavor: '甜感濃郁、醇厚度 (Body) 飽滿紮實、餘韻綿長不絕',
       method: '適合前段「點滴滴漏法」萃取高濃度芳香物質，中後段細水柱注水',
-      img: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/water_quality_01_水質硬度與萃取關係.jpg'
+      img: '/coffee_assets/04_沖煮科學與器材/四大主流濾杯官方圖/dripper_kono_meimon.jpg'
     },
     kalita: {
       name: 'Kalita / 三洋 扇形濾杯',
@@ -91,7 +91,7 @@ export default function App() {
       structure: '梯形平底設計、三小孔或單孔、垂直導流溝槽',
       flavor: '風味均衡圓潤、酸甜苦融合度高、萃取容錯率極佳',
       method: '多次分段注水，保持粉層充分浸潤與排氣',
-      img: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/filter_paper_粗細孔隙與流速.jpg'
+      img: '/coffee_assets/04_沖煮科學與器材/四大主流濾杯官方圖/dripper_kalita_102.jpg'
     },
     wave: {
       name: 'Kalita Wave 波浪蛋糕濾杯',
@@ -100,7 +100,7 @@ export default function App() {
       structure: '平底三孔設計，搭配 20 折波浪專用濾紙，使粉層與杯壁分離隔熱',
       flavor: '萃取極為均勻、甜感突出、口感純淨無雜味',
       method: '中心定點或小幅繞圈給水，水流均勻平穩穿透粉層',
-      img: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/bloom_degas_01_沖煮悶蒸泡沫觀察.jpg'
+      img: '/coffee_assets/04_沖煮科學與器材/四大主流濾杯官方圖/dripper_kalita_wave.jpg'
     }
   };
 
@@ -727,6 +727,90 @@ export default function App() {
           </div>
         </main>
       )}
+
+      
+          {/* 教材補充專區 */}
+          <div style={{ marginTop: '50px', borderTop: '1px solid var(--border-subtle)', paddingTop: '40px' }}>
+            <div className="section-header" style={{ margin: '0 0 24px' }}>
+              <span className="section-tag">SUPPLEMENTARY MATERIALS</span>
+              <h3 className="section-title">📖 沖煮變因與器材・教材補充</h3>
+              <p className="section-desc">彙整大倫老師手沖課程延伸教材、萃取動力學、烘焙膨脹率與濾紙孔隙之深度實務圖解。</p>
+            </div>
+
+            <div className="gallery-grid">
+              {[
+                {
+                  title: '教材補充：烘焙度與熟豆細胞壁膨脹',
+                  badge: '烘焙動力學',
+                  desc: '淺焙到深焙細胞壁多孔孔隙擴大與體積膨脹比率，直接影響注水時的吸水速度與可溶出物比例。',
+                  file: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/roast_degree_01_烘焙度與細胞膨脹.jpg'
+                },
+                {
+                  title: '教材補充：烘焙可溶性物質釋出變化',
+                  badge: '萃取率關聯',
+                  desc: '不同烘焙階段可萃取水溶性芳香物質（果酸、焦糖、油脂、灰分）之釋放順序與速率差異。',
+                  file: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/roast_degree_02_烘焙萃取變化.jpg'
+                },
+                {
+                  title: '教材補充：烘焙歷程失重率與脫水比例',
+                  badge: '生豆脫水數據',
+                  desc: '烘焙過程中水分散失比率（失重率約 12% - 18%）與熟豆密度之對應數據。',
+                  file: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/roast_degree_03_烘焙失重率.jpg'
+                },
+                {
+                  title: '教材補充：濾紙纖維孔隙粗細與流速',
+                  badge: '濾材孔隙解析',
+                  desc: '微距觀察不同品牌濾紙纖維密度，解析細粉截留能力與阻水流速之直接關係。',
+                  file: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/filter_paper_粗細孔隙與流速.jpg'
+                },
+                {
+                  title: '教材補充：悶蒸排氣與泡沫細緻度觀察 (一)',
+                  badge: '新鮮度與排氣',
+                  desc: '新鮮烘焙豆遇熱水瞬間釋出二氧化碳形成之綿密咖啡漢堡（Bloom），建立最初水流通道。',
+                  file: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/bloom_degas_01_沖煮悶蒸泡沫觀察.jpg'
+                },
+                {
+                  title: '教材補充：排氣狀態與通道穩定觀察 (二)',
+                  badge: '通道效應診斷',
+                  desc: '觀察表面泡沫色澤與排氣微孔分佈，藉以判斷過濾層是否均勻、有無局部通道破裂。',
+                  file: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/bloom_degas_02_排氣狀態觀察.jpg'
+                },
+                {
+                  title: '教材補充：磨豆機研磨顆粒均勻度解析',
+                  badge: '細粉與阻力',
+                  desc: '研磨顆粒粒徑分佈（微米篩分），極細粉沉積對下層濾水通道阻力之實測解析。',
+                  file: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/grinder_02_研磨均勻度解析.jpg'
+                },
+                {
+                  title: '教材補充：咖啡萃取動力學觀念圖解',
+                  badge: '萃取動力學',
+                  desc: '水分子擴散速度、對流驅動與可溶性固形物溶解曲線之理論模型。',
+                  file: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/brewing_concept_沖煮動力學概念.jpg'
+                },
+                {
+                  title: '教材補充：手沖沖煮器具與實驗配置實拍',
+                  badge: '實習器具設定',
+                  desc: '手沖壺（鶴嘴/月兔）、濾杯、電子秤與下壺之標準教學實驗台配置。',
+                  file: '/coffee_assets/04_沖煮科學與器材/沖煮變因與器材/brewing_equipment_手沖器具實拍.jpg'
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="gallery-card" onClick={() => setLightboxAsset(item)}>
+                  <div className="gallery-card-thumb">
+                    <span className="badge">{item.badge}</span>
+                    <img src={item.file} alt={item.title} />
+                  </div>
+                  <div className="gallery-card-info">
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
+                    <span style={{ color: 'var(--accent-gold)', fontSize: '0.85rem', marginTop: '10px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <Eye size={14} /> 點擊放大檢視
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
 
       {/* 模組六：產區與品種 */}
       {currentTab === 'origins' && (
