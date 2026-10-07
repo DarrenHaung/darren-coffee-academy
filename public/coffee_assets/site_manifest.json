@@ -1,0 +1,710 @@
+{
+  "database_name": "大倫咖啡 (Darren Coffee) 知識庫與手沖專區",
+  "version": "1.0.0",
+  "last_updated": "2026-10-07",
+  "total_assets": 63,
+  "author_instructor": "大倫 (Darren)",
+  "website_blueprint": {
+    "site_title": "大倫咖啡講堂 | 手沖咖啡專業教學與感官知識庫",
+    "recommended_routes": [
+      {
+        "path": "/",
+        "page_name": "首頁 (Home)",
+        "component": "HomePage",
+        "desc": "品牌介紹、大倫理念、手沖兩大鐵則精選、四大單元入口"
+      },
+      {
+        "path": "/courses",
+        "page_name": "手沖講堂 (Courses)",
+        "component": "CoursesPage",
+        "desc": "體驗班簡介、800元/單堂報名、基礎手沖大綱、沖煮參數 (90°C, 10g, 180ml)"
+      },
+      {
+        "path": "/sensory",
+        "page_name": "感官與風味庫 (Sensory Hub)",
+        "component": "SensoryPage",
+        "desc": "互動式 SCAA 2016 風味輪、反文化風味輪、瑕疵味輪、Le Nez du Cafe 36味香氣對照"
+      },
+      {
+        "path": "/brewing-science",
+        "page_name": "沖煮科學實驗室 (Brewing Science)",
+        "component": "SciencePage",
+        "desc": "四大濾杯流速比較、金杯理論濃度萃取率、水質軟硬度、磨豆機顆粒分佈、顯微鏡細胞壁"
+      },
+      {
+        "path": "/origins-encyclopedia",
+        "page_name": "世界產區與品種百科 (Encyclopedia)",
+        "component": "EncyclopediaPage",
+        "desc": "全球咖啡帶產區地圖、萬國旗、阿拉比卡品種樹狀圖、義式經典調飲解構"
+      },
+      {
+        "path": "/downloads",
+        "page_name": "講義與白皮書下載 (Downloads)",
+        "component": "DownloadsPage",
+        "desc": "SCAA 官方科學白皮書 PDF、反文化 PDF、高清講義下載"
+      }
+    ]
+  },
+  "core_brewing_parameters": {
+    "water_temperature_celsius": 90,
+    "coffee_grounds_grams": 10,
+    "yield_ml": 180,
+    "ratio": "1:18",
+    "grind_setting": "3.5 (小富士/小飛馬標準，粗砂糖顆粒)",
+    "core_principles": [
+      "給水量不可大於咖啡顆粒所能吸收的極限",
+      "良好過濾層的建立（水位下降至中心即將成凹狀即為最佳給水時機）",
+      "漸進墊高水位，避免細粉沉積於濾杯底部形成死層造成堵塞"
+    ]
+  },
+  "assets": [
+    {
+      "relative_path": "04_沖煮科學與器材/金杯萃取與濃度/gold_cup_extraction_01_濃度與萃取率基準.jpg",
+      "filename": "gold_cup_extraction_01_濃度與萃取率基準.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 55340,
+      "image_dimensions": {
+        "width": 752,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/金杯萃取與濃度/gold_cup_extraction_02_控制圖解.jpg",
+      "filename": "gold_cup_extraction_02_控制圖解.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 65371,
+      "image_dimensions": {
+        "width": 752,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/金杯萃取與濃度/gold_cup_extraction_03_萃取率計算.jpg",
+      "filename": "gold_cup_extraction_03_萃取率計算.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 52025,
+      "image_dimensions": {
+        "width": 752,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/金杯萃取與濃度/gold_cup_extraction_04_金杯準則落點.jpg",
+      "filename": "gold_cup_extraction_04_金杯準則落點.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 50305,
+      "image_dimensions": {
+        "width": 752,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/咖啡顯微鏡微觀/microscope_bean_cell_01_細胞壁孔隙.jpg",
+      "filename": "microscope_bean_cell_01_細胞壁孔隙.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 37501,
+      "image_dimensions": {
+        "width": 960,
+        "height": 540
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/咖啡顯微鏡微觀/microscope_bean_cell_02_孔徑毛細現象.jpg",
+      "filename": "microscope_bean_cell_02_孔徑毛細現象.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 43455,
+      "image_dimensions": {
+        "width": 960,
+        "height": 540
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/咖啡顯微鏡微觀/microscope_bean_cell_03_萃取前後結構.jpg",
+      "filename": "microscope_bean_cell_03_萃取前後結構.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 39309,
+      "image_dimensions": {
+        "width": 960,
+        "height": 540
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/咖啡顯微鏡微觀/microscope_bean_cell_04_顆粒橫截面.jpg",
+      "filename": "microscope_bean_cell_04_顆粒橫截面.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 54077,
+      "image_dimensions": {
+        "width": 528,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/咖啡顯微鏡微觀/microscope_bean_cell_05_通道放大.jpg",
+      "filename": "microscope_bean_cell_05_通道放大.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 51414,
+      "image_dimensions": {
+        "width": 528,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/咖啡顯微鏡微觀/microscope_bean_cell_06_咖啡粉末特寫.jpg",
+      "filename": "microscope_bean_cell_06_咖啡粉末特寫.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 28235,
+      "image_dimensions": {
+        "width": 960,
+        "height": 540
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/沖煮變因與器材/bloom_degas_01_沖煮悶蒸泡沫觀察.jpg",
+      "filename": "bloom_degas_01_沖煮悶蒸泡沫觀察.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 121419,
+      "image_dimensions": {
+        "width": 764,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/沖煮變因與器材/bloom_degas_02_排氣狀態觀察.jpg",
+      "filename": "bloom_degas_02_排氣狀態觀察.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 62565,
+      "image_dimensions": {
+        "width": 764,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/沖煮變因與器材/brewing_concept_沖煮動力學概念.jpg",
+      "filename": "brewing_concept_沖煮動力學概念.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 98423,
+      "image_dimensions": {
+        "width": 764,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/沖煮變因與器材/brewing_equipment_手沖器具實拍.jpg",
+      "filename": "brewing_equipment_手沖器具實拍.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 215661,
+      "image_dimensions": {
+        "width": 752,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/沖煮變因與器材/filter_paper_粗細孔隙與流速.jpg",
+      "filename": "filter_paper_粗細孔隙與流速.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 39854,
+      "image_dimensions": {
+        "width": 798,
+        "height": 240
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/沖煮變因與器材/grinder_01_磨豆機刀盤與顆粒分佈.jpg",
+      "filename": "grinder_01_磨豆機刀盤與顆粒分佈.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 113792,
+      "image_dimensions": {
+        "width": 752,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/沖煮變因與器材/grinder_02_研磨均勻度解析.jpg",
+      "filename": "grinder_02_研磨均勻度解析.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 106929,
+      "image_dimensions": {
+        "width": 752,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/沖煮變因與器材/roast_degree_01_烘焙度與細胞膨脹.jpg",
+      "filename": "roast_degree_01_烘焙度與細胞膨脹.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 77374,
+      "image_dimensions": {
+        "width": 752,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/沖煮變因與器材/roast_degree_02_烘焙萃取變化.jpg",
+      "filename": "roast_degree_02_烘焙萃取變化.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 74158,
+      "image_dimensions": {
+        "width": 752,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/沖煮變因與器材/roast_degree_03_烘焙失重率.jpg",
+      "filename": "roast_degree_03_烘焙失重率.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 36811,
+      "image_dimensions": {
+        "width": 752,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/沖煮變因與器材/water_quality_01_水質硬度與萃取關係.jpg",
+      "filename": "water_quality_01_水質硬度與萃取關係.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 88996,
+      "image_dimensions": {
+        "width": 752,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "04_沖煮科學與器材/沖煮變因與器材/water_quality_02_水質實驗說明.jpg",
+      "filename": "water_quality_02_水質實驗說明.jpg",
+      "top_category": "04_沖煮科學與器材",
+      "extension": ".jpg",
+      "size_bytes": 31317,
+      "image_dimensions": {
+        "width": 752,
+        "height": 960
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/aroma_taste_mapping_咖啡香氣與味覺對應表.jpg",
+      "filename": "aroma_taste_mapping_咖啡香氣與味覺對應表.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 163300,
+      "image_dimensions": {
+        "width": 1280,
+        "height": 1253
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA_36味聞香瓶/scaa_36_aromas_01_酵素反應_花果草本.jpg",
+      "filename": "scaa_36_aromas_01_酵素反應_花果草本.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 492143,
+      "image_dimensions": {
+        "width": 2098,
+        "height": 1446
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA_36味聞香瓶/scaa_36_aromas_01_酵素反應_補充說明.jpg",
+      "filename": "scaa_36_aromas_01_酵素反應_補充說明.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 661845,
+      "image_dimensions": {
+        "width": 2098,
+        "height": 1446
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA_36味聞香瓶/scaa_36_aromas_02_焦糖化反應_堅果焦糖.jpg",
+      "filename": "scaa_36_aromas_02_焦糖化反應_堅果焦糖.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 491552,
+      "image_dimensions": {
+        "width": 2098,
+        "height": 1446
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA_36味聞香瓶/scaa_36_aromas_02_焦糖化反應_補充說明.jpg",
+      "filename": "scaa_36_aromas_02_焦糖化反應_補充說明.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 497265,
+      "image_dimensions": {
+        "width": 2098,
+        "height": 1446
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA_36味聞香瓶/scaa_36_aromas_03_乾餾反應_補充說明.jpg",
+      "filename": "scaa_36_aromas_03_乾餾反應_補充說明.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 128616,
+      "image_dimensions": {
+        "width": 866,
+        "height": 612
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA_36味聞香瓶/scaa_36_aromas_03_乾餾反應_香料樹脂.jpg",
+      "filename": "scaa_36_aromas_03_乾餾反應_香料樹脂.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 461769,
+      "image_dimensions": {
+        "width": 2098,
+        "height": 1446
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA_36味聞香瓶/scaa_36_aromas_04_芳香瑕疵_補充說明.jpg",
+      "filename": "scaa_36_aromas_04_芳香瑕疵_補充說明.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 609356,
+      "image_dimensions": {
+        "width": 2098,
+        "height": 1446
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA_36味聞香瓶/scaa_36_aromas_04_芳香瑕疵與化學物.jpg",
+      "filename": "scaa_36_aromas_04_芳香瑕疵與化學物.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 437556,
+      "image_dimensions": {
+        "width": 2098,
+        "height": 1446
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/反文化咖啡風味輪/cc_faults_wheel_反文化瑕疵風味輪.jpg",
+      "filename": "cc_faults_wheel_反文化瑕疵風味輪.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 2536091,
+      "image_dimensions": {
+        "width": 2550,
+        "height": 1650
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/反文化咖啡風味輪/cc_flavor_wheel_反文化咖啡中英對照.jpg",
+      "filename": "cc_flavor_wheel_反文化咖啡中英對照.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 1845313,
+      "image_dimensions": {
+        "width": 2100,
+        "height": 1554
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/反文化咖啡風味輪/cc_flavor_wheel_反文化咖啡新版.png",
+      "filename": "cc_flavor_wheel_反文化咖啡新版.png",
+      "top_category": "03_感官與風味庫",
+      "extension": ".png",
+      "size_bytes": 9796503,
+      "image_dimensions": {
+        "width": 2100,
+        "height": 1554
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA官方風味輪/scaa_flavor_wheel_2016_繁中高解析輸出版.jpg",
+      "filename": "scaa_flavor_wheel_2016_繁中高解析輸出版.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 2938983,
+      "image_dimensions": {
+        "width": 2546,
+        "height": 3600
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA官方風味輪/scaa_flavor_wheel_2016_繁體中文.png",
+      "filename": "scaa_flavor_wheel_2016_繁體中文.png",
+      "top_category": "03_感官與風味庫",
+      "extension": ".png",
+      "size_bytes": 2659362,
+      "image_dimensions": {
+        "width": 2000,
+        "height": 2828
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA官方風味輪/scaa_flavor_wheel_2016_英文原版.jpg",
+      "filename": "scaa_flavor_wheel_2016_英文原版.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 2885391,
+      "image_dimensions": {
+        "width": 2000,
+        "height": 2828
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA官方風味輪/scaa_flavor_wheel_經典中英對照.jpg",
+      "filename": "scaa_flavor_wheel_經典中英對照.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 4975757,
+      "image_dimensions": {
+        "width": 4191,
+        "height": 3041
+      }
+    },
+    {
+      "relative_path": "03_感官與風味庫/SCAA官方風味輪/scaa_flavor_wheel_經典原版.jpg",
+      "filename": "scaa_flavor_wheel_經典原版.jpg",
+      "top_category": "03_感官與風味庫",
+      "extension": ".jpg",
+      "size_bytes": 3564374,
+      "image_dimensions": {
+        "width": 4191,
+        "height": 3082
+      }
+    },
+    {
+      "relative_path": "06_專業文獻與PDF/coffee_tasters_flavor_wheel_guide.pdf",
+      "filename": "coffee_tasters_flavor_wheel_guide.pdf",
+      "top_category": "06_專業文獻與PDF",
+      "extension": ".pdf",
+      "size_bytes": 8087906,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "06_專業文獻與PDF/counter_culture_faults_wheel_11x17.pdf",
+      "filename": "counter_culture_faults_wheel_11x17.pdf",
+      "top_category": "06_專業文獻與PDF",
+      "extension": ".pdf",
+      "size_bytes": 3464392,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "06_專業文獻與PDF/counter_culture_flavor_wheel_85x11.pdf",
+      "filename": "counter_culture_flavor_wheel_85x11.pdf",
+      "top_category": "06_專業文獻與PDF",
+      "extension": ".pdf",
+      "size_bytes": 1891221,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "06_專業文獻與PDF/scaa_flavor_wheel_official_vector.pdf",
+      "filename": "scaa_flavor_wheel_official_vector.pdf",
+      "top_category": "06_專業文獻與PDF",
+      "extension": ".pdf",
+      "size_bytes": 677943,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "06_專業文獻與PDF/scaa_flavor_wheel_scientific_background_2016.pdf",
+      "filename": "scaa_flavor_wheel_scientific_background_2016.pdf",
+      "top_category": "06_專業文獻與PDF",
+      "extension": ".pdf",
+      "size_bytes": 34259908,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "02_課程與教案/01_手沖咖啡體驗班_簡介與收費.md",
+      "filename": "01_手沖咖啡體驗班_簡介與收費.md",
+      "top_category": "02_課程與教案",
+      "extension": ".md",
+      "size_bytes": 1356,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "02_課程與教案/02_基礎手沖專業實戰課綱.md",
+      "filename": "02_基礎手沖專業實戰課綱.md",
+      "top_category": "02_課程與教案",
+      "extension": ".md",
+      "size_bytes": 2300,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "02_課程與教案/03_手沖濾杯與給水技法進階講義.md",
+      "filename": "03_手沖濾杯與給水技法進階講義.md",
+      "top_category": "02_課程與教案",
+      "extension": ".md",
+      "size_bytes": 1730,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "02_課程與教案/原始Word檔/course_2016手沖咖啡教案_三孔與單孔濾杯.docx",
+      "filename": "course_2016手沖咖啡教案_三孔與單孔濾杯.docx",
+      "top_category": "02_課程與教案",
+      "extension": ".docx",
+      "size_bytes": 27027,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "02_課程與教案/原始Word檔/course_基礎手沖咖啡大綱_團體班大倫版.docx",
+      "filename": "course_基礎手沖咖啡大綱_團體班大倫版.docx",
+      "top_category": "02_課程與教案",
+      "extension": ".docx",
+      "size_bytes": 38222,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "02_課程與教案/原始Word檔/course_基礎手沖咖啡大綱_團體班學生版.docx",
+      "filename": "course_基礎手沖咖啡大綱_團體班學生版.docx",
+      "top_category": "02_課程與教案",
+      "extension": ".docx",
+      "size_bytes": 2820355,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "02_課程與教案/原始Word檔/course_基礎手沖咖啡大綱_大倫版.docx",
+      "filename": "course_基礎手沖咖啡大綱_大倫版.docx",
+      "top_category": "02_課程與教案",
+      "extension": ".docx",
+      "size_bytes": 38811,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "02_課程與教案/原始Word檔/course_基礎手沖咖啡大綱_學生版.docx",
+      "filename": "course_基礎手沖咖啡大綱_學生版.docx",
+      "top_category": "02_課程與教案",
+      "extension": ".docx",
+      "size_bytes": 2834432,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "02_課程與教案/原始Word檔/course_手沖咖啡體驗班.docx",
+      "filename": "course_手沖咖啡體驗班.docx",
+      "top_category": "02_課程與教案",
+      "extension": ".docx",
+      "size_bytes": 16748,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "01_品牌與識別/brand_logo_大倫咖啡.jpg",
+      "filename": "brand_logo_大倫咖啡.jpg",
+      "top_category": "01_品牌與識別",
+      "extension": ".jpg",
+      "size_bytes": 134995,
+      "image_dimensions": {
+        "width": 567,
+        "height": 806
+      }
+    },
+    {
+      "relative_path": "01_品牌與識別/brand_logo_大倫咖啡_向量原檔.ai",
+      "filename": "brand_logo_大倫咖啡_向量原檔.ai",
+      "top_category": "01_品牌與識別",
+      "extension": ".ai",
+      "size_bytes": 434614,
+      "image_dimensions": null
+    },
+    {
+      "relative_path": "05_產區與品種圖鑑/咖啡種類圖解/chart_coffee_brewing_methods_沖煮器具與萃取分類.jpg",
+      "filename": "chart_coffee_brewing_methods_沖煮器具與萃取分類.jpg",
+      "top_category": "05_產區與品種圖鑑",
+      "extension": ".jpg",
+      "size_bytes": 1075579,
+      "image_dimensions": {
+        "width": 2677,
+        "height": 2012
+      }
+    },
+    {
+      "relative_path": "05_產區與品種圖鑑/咖啡種類圖解/chart_coffee_drinks_ratio_各類咖啡調飲比例圖.jpg",
+      "filename": "chart_coffee_drinks_ratio_各類咖啡調飲比例圖.jpg",
+      "top_category": "05_產區與品種圖鑑",
+      "extension": ".jpg",
+      "size_bytes": 1892994,
+      "image_dimensions": {
+        "width": 2677,
+        "height": 2012
+      }
+    },
+    {
+      "relative_path": "05_產區與品種圖鑑/咖啡種類圖解/chart_coffee_drinks_經典咖啡品項大圖解.jpg",
+      "filename": "chart_coffee_drinks_經典咖啡品項大圖解.jpg",
+      "top_category": "05_產區與品種圖鑑",
+      "extension": ".jpg",
+      "size_bytes": 2006359,
+      "image_dimensions": {
+        "width": 2800,
+        "height": 2100
+      }
+    },
+    {
+      "relative_path": "05_產區與品種圖鑑/咖啡品種系譜/infographic_coffee_beans_咖啡豆分類概覽.jpg",
+      "filename": "infographic_coffee_beans_咖啡豆分類概覽.jpg",
+      "top_category": "05_產區與品種圖鑑",
+      "extension": ".jpg",
+      "size_bytes": 84553,
+      "image_dimensions": {
+        "width": 801,
+        "height": 720
+      }
+    },
+    {
+      "relative_path": "05_產區與品種圖鑑/咖啡品種系譜/tree_coffee_varieties_生豆品種演化圖.jpg",
+      "filename": "tree_coffee_varieties_生豆品種演化圖.jpg",
+      "top_category": "05_產區與品種圖鑑",
+      "extension": ".jpg",
+      "size_bytes": 302051,
+      "image_dimensions": {
+        "width": 1664,
+        "height": 830
+      }
+    },
+    {
+      "relative_path": "05_產區與品種圖鑑/咖啡品種系譜/tree_coffee_varieties_阿拉比卡品種樹狀圖_CI.jpg",
+      "filename": "tree_coffee_varieties_阿拉比卡品種樹狀圖_CI.jpg",
+      "top_category": "05_產區與品種圖鑑",
+      "extension": ".jpg",
+      "size_bytes": 886142,
+      "image_dimensions": {
+        "width": 2501,
+        "height": 1618
+      }
+    },
+    {
+      "relative_path": "05_產區與品種圖鑑/世界產區地圖/flags_coffee_countries_咖啡產國萬國旗.jpg",
+      "filename": "flags_coffee_countries_咖啡產國萬國旗.jpg",
+      "top_category": "05_產區與品種圖鑑",
+      "extension": ".jpg",
+      "size_bytes": 801852,
+      "image_dimensions": {
+        "width": 1452,
+        "height": 2171
+      }
+    },
+    {
+      "relative_path": "05_產區與品種圖鑑/世界產區地圖/map_world_coffee_origins_世界咖啡產區分佈圖.jpg",
+      "filename": "map_world_coffee_origins_世界咖啡產區分佈圖.jpg",
+      "top_category": "05_產區與品種圖鑑",
+      "extension": ".jpg",
+      "size_bytes": 1574873,
+      "image_dimensions": {
+        "width": 2800,
+        "height": 1560
+      }
+    }
+  ]
+}
