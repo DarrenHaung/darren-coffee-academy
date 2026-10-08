@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import confetti from 'canvas-confetti';
 import { 
   Video,
   FileText,
@@ -76,9 +75,6 @@ export default function App() {
     { id: 'videos', label: '影音專區', icon: Video },
     { id: 'downloads', label: '下載專區', icon: Download },
   ];
-  const [bookingModal, setBookingModal] = useState(false);
-  const [bookedSuccess, setBookedSuccess] = useState(false);
-  const [bookingData, setBookingData] = useState({ name: '', phone: '', people: '1', date: '' });
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -125,20 +121,6 @@ export default function App() {
     const m = Math.floor(sec / 60);
     const s = sec % 60;
     return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-  };
-
-  const handleBookingSubmit = (e) => {
-    e.preventDefault();
-    setBookedSuccess(true);
-    confetti({
-      particleCount: 80,
-      spread: 70,
-      origin: { y: 0.6 }
-    });
-    setTimeout(() => {
-      setBookedSuccess(false);
-      setBookingModal(false);
-    }, 2500);
   };
 
   const waterTotal = Math.round(grams * ratio);
@@ -419,14 +401,6 @@ export default function App() {
             })}
           </nav>
 
-          <button 
-            id="btn-book-top" 
-            className="nav-cta-btn desktop-cta" 
-            onClick={() => setBookingModal(true)}
-          >
-            預約手沖課
-          </button>
-
           {/* 手機版漢堡切換按鈕 */}
           <button
             id="btn-hamburger"
@@ -490,20 +464,6 @@ export default function App() {
                 );
               })}
             </nav>
-
-            <div className="mobile-drawer-footer">
-              <button 
-                id="btn-mobile-book"
-                className="nav-cta-btn" 
-                style={{ width: '100%', padding: '14px', fontSize: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setBookingModal(true);
-                }}
-              >
-                <Sparkles size={18} /> 立即預約手沖體驗課
-              </button>
-            </div>
           </div>
         </div>
       )}
@@ -579,20 +539,14 @@ export default function App() {
           </div>
 
           <div className="glass-panel" style={{ padding: '36px', maxWidth: '880px', margin: '0 auto 40px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '20px', marginBottom: '24px' }}>
-              <div>
-                <span style={{ background: 'var(--accent-amber)', color: '#fff', padding: '4px 12px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: '700' }}>熱門招生中</span>
-                <h3 style={{ fontSize: '1.8rem', marginTop: '10px' }}>手沖咖啡體驗班</h3>
-                <p style={{ color: 'var(--text-secondary)', marginTop: '4px' }}>講師：大倫 (Darren) ｜ 2-3 人小班制 (最多 5 位)</p>
-              </div>
-              <div style={{ textAlign: 'right' }}>
-                <span style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--accent-gold)' }}>NT$ 800</span>
-                <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}> / 單堂 2 小時</span>
-              </div>
+            <div style={{ borderBottom: '1px solid var(--border-subtle)', paddingBottom: '20px', marginBottom: '24px' }}>
+              <span className="section-tag">CURRICULUM OVERVIEW</span>
+              <h3 style={{ fontSize: '1.8rem', marginTop: '6px' }}>手沖咖啡實戰核心課程模組</h3>
+              <p style={{ color: 'var(--text-secondary)', marginTop: '4px' }}>講師：大倫 (Darren) ｜ 系統化咖啡萃取科學與感官校正架構</p>
             </div>
 
-            <h4 style={{ fontSize: '1.1rem', marginBottom: '16px', color: 'var(--accent-gold-light)' }}>課程大綱與學習重點：</h4>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginBottom: '32px' }}>
+            <h4 style={{ fontSize: '1.1rem', marginBottom: '16px', color: 'var(--accent-gold-light)' }}>講堂六大核心研習模組：</h4>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
               {[
                 '定義何謂好咖啡：酸、甜、苦平衡且不帶澀味',
                 '味覺校正品飲實驗：比較三種不同手法風味表現',
@@ -601,22 +555,11 @@ export default function App() {
                 '四大濾杯流速比較：V60、Kono、扇形、波浪',
                 '手沖壺操作心法：握壺、提壺、手腕繞圈節奏'
               ].map((item, idx) => (
-                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'rgba(255,255,255,0.03)', padding: '12px', borderRadius: '8px' }}>
+                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'rgba(255,255,255,0.03)', padding: '14px', borderRadius: '8px' }}>
                   <CheckCircle2 size={18} color="var(--accent-gold)" />
-                  <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{item}</span>
+                  <span style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>{item}</span>
                 </div>
               ))}
-            </div>
-
-            <div style={{ textAlign: 'center' }}>
-              <button 
-                id="btn-book-course-card"
-                className="nav-cta-btn" 
-                style={{ padding: '14px 40px', fontSize: '1.05rem' }}
-                onClick={() => setBookingModal(true)}
-              >
-                立即報名預約體驗班
-              </button>
             </div>
           </div>
 
@@ -1310,82 +1253,6 @@ export default function App() {
         );
       })()}
 
-
-      {/* 預約課程 Modal */}
-      {bookingModal && (
-        <div className="modal-overlay" onClick={() => setBookingModal(false)}>
-          <div className="modal-content" style={{ maxWidth: '480px' }} onClick={e => e.stopPropagation()}>
-            <button className="modal-close-btn" onClick={() => setBookingModal(false)}>
-              <X size={20} />
-            </button>
-            <div className="modal-body" style={{ padding: '32px' }}>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '8px', color: 'var(--text-primary)' }}>預約手沖咖啡體驗班</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '24px' }}>
-                單堂 NT$ 800 元 / 人 ｜ 2 小時小班實戰指導
-              </p>
-
-              {bookedSuccess ? (
-                <div style={{ textAlign: 'center', padding: '30px 0' }}>
-                  <CheckCircle2 size={54} color="var(--accent-gold)" style={{ margin: '0 auto 16px' }} />
-                  <h4 style={{ fontSize: '1.3rem', marginBottom: '8px' }}>預約成功！</h4>
-                  <p style={{ color: 'var(--text-secondary)' }}>大倫老師將盡快與您電話聯繫確認上課時間。</p>
-                </div>
-              ) : (
-                <form className="booking-form" onSubmit={handleBookingSubmit}>
-                  <div className="form-group">
-                    <label>學員姓名</label>
-                    <input 
-                      type="text" 
-                      required 
-                      className="form-input" 
-                      placeholder="請輸入您的姓名"
-                      value={bookingData.name}
-                      onChange={e => setBookingData({ ...bookingData, name: e.target.value })}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label>聯絡電話</label>
-                    <input 
-                      type="tel" 
-                      required 
-                      className="form-input" 
-                      placeholder="09xx-xxx-xxx"
-                      value={bookingData.phone}
-                      onChange={e => setBookingData({ ...bookingData, phone: e.target.value })}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label>報名人數</label>
-                    <select 
-                      className="form-input"
-                      value={bookingData.people}
-                      onChange={e => setBookingData({ ...bookingData, people: e.target.value })}
-                    >
-                      <option value="1">1 位</option>
-                      <option value="2">2 位 (推薦)</option>
-                      <option value="3">3 位</option>
-                      <option value="4">4-5 位 (滿班包班)</option>
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <label>期望上課日期</label>
-                    <input 
-                      type="date" 
-                      required 
-                      className="form-input"
-                      value={bookingData.date}
-                      onChange={e => setBookingData({ ...bookingData, date: e.target.value })}
-                    />
-                  </div>
-                  <button type="submit" className="form-submit-btn">
-                    確認送出預約
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* 頁尾 Footer */}
       <footer className="footer">
